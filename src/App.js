@@ -1,23 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import WelcomeMessage from './WelcomeMessage';
+import styled, { css } from 'styled-components';
+
+const MyButton = styled.div`
+  color: green;
+  text-decoration: underline;
+
+  ${props => props.red && css`
+    color: red;  
+  `}
+
+  ${props => props.blue && css`
+    color: blue;  
+  `}
+`
+
+const PurpleButton = styled(MyButton)`
+  color: purple;
+
+`
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyButton> <WelcomeMessage/> </MyButton>
+      <MyButton red> <WelcomeMessage/> </MyButton>
+      <PurpleButton> <WelcomeMessage/> </PurpleButton>
     </div>
   );
 }
