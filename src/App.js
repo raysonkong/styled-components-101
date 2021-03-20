@@ -1,25 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
 import WelcomeMessage from './WelcomeMessage';
-import styled, { css } from 'styled-components';
+import MyButton from './MyButton';
+import PurpleButton from './PurpleButton';
 
-const MyButton = styled.div`
-  color: green;
-  text-decoration: underline;
 
-  ${props => props.red && css`
-    color: red;  
-  `}
 
-  ${props => props.blue && css`
-    color: blue;  
-  `}
-`
-
-const PurpleButton = styled(MyButton)`
-  color: purple;
-
-`
 
 function App() {
   return (
